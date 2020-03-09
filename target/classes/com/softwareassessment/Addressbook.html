@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book</title>
+    <link rel="icon" href="https://venturebeat.com/wp-content/uploads/2012/02/contacts.jpg?fit=482%2C485&strip=all" type="image/x-icon">
+    <style>
+        .feedbackPanelERROR {color:red}
+        html, body{
+            background: linear-gradient(to bottom, #aebcbf 0%,#6e7774 50%,#0a0809 100%)no-repeat;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        span{
+            color: white;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            background-color: #F90;
+            color: white;
+        }
+        td input{
+            background:#6e7774;
+            color: white;
+        }
+        .btn {
+            border: 1px solid black;
+            background-color: #a2a2a2;
+            color: white;
+            border-radius: 10px;
+            padding: 8px 24px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: #e7e7e7;
+        }
+        .btn-success {
+            border-color: #0c34af;
+            color: #1e5ace;
+        }
+        .btn-success:hover {
+             background-color: #1e5ace;
+             color: white;
+         }
+        .btn-danger{
+            border-color: #f44336;
+            color: red;
+        }
+        .btn-danger:hover{
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div wicket:id="feedback"></div>
+    <form id="newContactForm" method="get" wicket:id="newContactForm">
+        <fieldset>
+            <legend style="color:#F90">Add Contact</legend>
+            <p wicket:id="addStatus"></p>
+            <span>*First Name: &emsp; </span><input wicket:id="First Name" type="text" id="First Name" size="12"/><br><br>
+            <span>*Last Name: &emsp; </span><input wicket:id="Last Name" type="text" id="Last Name" size="12"/><br><br>
+            <span>*Address:&emsp;&emsp;&nbsp; </span><input wicket:id="Address" type="text" id="Address" size="35"/><br><br>
+            <span> Email: &emsp;&emsp;&emsp;&nbsp; </span><input wicket:id="Email" type="text" id="Email" size="35"/><br><br>
+            <span> Phone Number: </span><input wicket:id="Phone" type="text" id="Phone" size="16"/><br><br>
+            <input class="btn" type="submit" wicket:id="addContactButton" name="Add Contact" value="Add Contact"/>
+        </fieldset>
+    </form>
+    <br>
+    <br>
+
+    <form id="searchForm" method="get" wicket:id="searchForm">
+        <fieldset>
+            <legend style="color:#F90">Search</legend>
+            <input wicket:id="searchInput" type="text" id="searchInput"/>
+            <input  class="btn" type="submit" wicket:id="searchButton" name="Search" value="Search"/>
+            <input  class="btn" type="submit" wicket:id="clearSearchButton" name="Clear" value="Clear"/>
+        </fieldset>
+    </form>
+    <br>
+    <br>
+
+    <div wicket:id="updateDeleteFeedback" class="contactTable"></div>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr wicket:id="listView">
+            <form wicket:id="contactUpdateForm" method="get" id="contactUpdateForm">
+                <td><input wicket:id="First" type="text"/></td>
+                <td><input wicket:id="Last" type="text"/></td>
+                <td><input wicket:id="Address" type="text" size="35"/></td>
+                <td><input wicket:id="Email" type="text" size="35"/></td>
+                <td><input wicket:id="Phone" type="text" size="16"/></td>
+                <td><input class="btn btn-success" type="submit" wicket:id="update" name="Update" value="Update"/></td>
+                <td><input class="btn btn-danger" type="submit" wicket:id="delete" name="Delete" value="Delete"/></td>
+            </form>
+        </tr>
+    </table>
+<br>
+<br>
+    <button class="btn" type="button" wicket:id="logout" name="Log Out" value="Log Out">Log Out</button>
+
+</body>
+</html>

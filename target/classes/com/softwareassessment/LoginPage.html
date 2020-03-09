@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="icon" href="https://venturebeat.com/wp-content/uploads/2012/02/contacts.jpg?fit=482%2C485&strip=all" type="image/x-icon">
+    <style>
+       html,body {
+           background: linear-gradient(to bottom, rgba(74,131,137,1) 0%,rgba(35,83,138,1) 100%);
+           height: 100%;
+           width: 100%;
+           margin: 0;
+       }
+        fieldset{
+            color: white;
+            width: 500px;
+            margin:80px auto
+        }
+        .rectangle {
+            text-align: center;
+            align-items: center;
+            height: 30px;
+            width: 400px;
+            background-color: #555;
+        }
+        .button{
+            background-color: #b0b0b0;
+            border: 1px black;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 26px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button:hover{
+            background: #e7e7e7;
+        }
+    </style>
+</head>
+<body>
+
+<center><div class="rectangle">
+    <h2>LOGIN FORM</h2>
+</div></center>
+<div id="parent">
+    <form id = "loginForm" method="get" wicket:id="loginForm">
+        <fieldset>
+                <p wicket:id="loginStatus"></p>
+                <span>Username:  </span><input wicket:id="username" type="text" id="username"/><br><br>
+                <span>Password:  </span><input wicket:id="password" type="password" id="password"/><br>
+                <p>
+                    <input class="button" type="submit" wicket:id="submitButton" name="Login" value="Login"/> &emsp;
+                    <input class="button" type="submit" wicket:id="registerButton" name="Register" value="Register"/>
+                </p>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
